@@ -157,7 +157,7 @@ public final class Store<State, Action> {
       if self.isSending {
         assertionFailure(
           """
-          The store was sent the action \(debugCaseOutput(action)) while it was already
+          The store was sent the action \(debugOutput(action)) while it was already
           processing another action.
 
           This can happen for a few reasons:

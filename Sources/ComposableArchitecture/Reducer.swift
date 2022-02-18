@@ -170,7 +170,7 @@ public struct Reducer<State, Action, Environment> {
       guard state != nil else {
         assertionFailure(
           """
-          "\(debugCaseOutput(action))" was received by an optional reducer when its state was \
+          "\(debugOutput(action))" was received by an optional reducer when its state was \
           "nil". This can happen for a few reasons:
 
           * The optional reducer was combined with or run from another reducer that set \
@@ -234,7 +234,7 @@ public struct Reducer<State, Action, Environment> {
       assert(
         index < globalState[keyPath: toLocalState].endIndex,
         """
-        "\(debugCaseOutput(localAction))" was received by a "forEach" reducer at index \(index) \
+        "\(debugOutput(localAction))" was received by a "forEach" reducer at index \(index) \
         when its state contained no element at this index. This is considered an application logic \
         error, and can happen for a few reasons:
 
@@ -287,7 +287,7 @@ public struct Reducer<State, Action, Environment> {
       assert(
         globalState[keyPath: toLocalState][key] != nil,
         """
-        "\(debugCaseOutput(localAction))" was received by a "forEach" reducer at key \(key) \
+        "\(debugOutput(localAction))" was received by a "forEach" reducer at key \(key) \
         when its state contained no element at this key. This is considered an application logic \
         error, and can happen for a few reasons:
 
